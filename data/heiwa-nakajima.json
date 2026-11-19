@@ -1,0 +1,18 @@
+{
+  "id": "heiwa-nakajima",
+  "name": "外国人留学生奨学生",
+  "foundation": "公益財団法人平和中島財団",
+  "source_url": "http://hnf.jp/shogaku/",
+  "nomination_required": true,
+  "public_deadline": null,
+  "internal_deadline": "NEEDS_VERIFICATION",
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": null,
+  "age_limit": null,
+  "source_hash": "4309205fa8fe2b9357e5d5079b7888e82f52b01e0bb4b8b4e336d42b18ad6c5d",
+  "needs_verification": [
+    "public_deadline: no date found near a deadline keyword",
+    "internal_deadline: nomination required, real cutoff is on the university portal"
+  ],
+  "evidence": {}
+}

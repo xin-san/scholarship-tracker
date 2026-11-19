@@ -1,0 +1,21 @@
+{
+  "id": "ichihara",
+  "name": "給与奨学生 (外国人 大学・大学院生)",
+  "foundation": "公益財団法人市原国際奨学財団",
+  "source_url": "https://www.ichihara-isf.or.jp/scholarship/application-abroad.html",
+  "nomination_required": true,
+  "public_deadline": "2026-10-15",
+  "internal_deadline": "NEEDS_VERIFICATION",
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": 50000,
+  "age_limit": null,
+  "source_hash": "fbdc2da069dbc48161c3dbf72d21214647d49a721ff2c38f1f40b3e226740104",
+  "needs_verification": [
+    "public_deadline 2026-10-15 is in the past: the page may still show last year's round",
+    "internal_deadline: nomination required, real cutoff is on the university portal"
+  ],
+  "evidence": {
+    "public_deadline": "応募締切 2026年10月15日(当財団事務局宛必着)",
+    "stipend_jpy_month": "年額60万円(月額 50,000円)"
+  }
+}

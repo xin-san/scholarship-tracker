@@ -1,0 +1,20 @@
+{
+  "id": "sato-yo",
+  "name": "私費留学生奨学金",
+  "foundation": "公益財団法人佐藤陽国際奨学財団",
+  "source_url": "https://sisf.or.jp/ja/scholarship/foreign-studies/self-supporting/",
+  "nomination_required": true,
+  "public_deadline": null,
+  "internal_deadline": "NEEDS_VERIFICATION",
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": 180000,
+  "age_limit": null,
+  "source_hash": "c75957484478636c52de3b63d9bedc6783ed3c029fb0e9e3feac391f164f46b9",
+  "needs_verification": [
+    "public_deadline: no date found near a deadline keyword",
+    "internal_deadline: nomination required, real cutoff is on the university portal"
+  ],
+  "evidence": {
+    "stipend_jpy_month": "月額 180,000 円 (この他に授業料等補助制度があります)"
+  }
+}

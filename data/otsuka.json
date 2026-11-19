@@ -1,0 +1,21 @@
+{
+  "id": "otsuka",
+  "name": "奨学金 (直接応募)",
+  "foundation": "公益財団法人大塚敏美育英奨学財団",
+  "source_url": "https://www.otsukafoundation.org/guide/index.html",
+  "nomination_required": false,
+  "public_deadline": "2026-04-13",
+  "internal_deadline": null,
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": null,
+  "age_limit": 38,
+  "source_hash": "feea153419a85bd46b0f352a9f3b8720426b19b98ade9592595d1543c6187957",
+  "needs_verification": [
+    "public_deadline 2026-04-13 is in the past: the page may still show last year's round",
+    "public_deadline: several different dates near deadline keywords, earliest one used"
+  ],
+  "evidence": {
+    "public_deadline": "Web提出:2026年3月5日(木)9時~4月13日(月)17時",
+    "age_limit": "(1) 2026年4月1日時点で満38歳以下の私費外国人留学生(在留資格が「留学」で日本国籍を持たない者)"
+  }
+}

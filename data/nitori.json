@@ -1,0 +1,20 @@
+{
+  "id": "nitori",
+  "name": "来日留学生奨学金",
+  "foundation": "公益財団法人似鳥国際奨学財団",
+  "source_url": "https://www.nitori-shougakuzaidan.com/application/",
+  "nomination_required": false,
+  "public_deadline": "2026-04-20",
+  "internal_deadline": null,
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": 45000,
+  "age_limit": null,
+  "source_hash": "e9805c88ea50ebcd1df05604d9d1fd371991c834d35782cd675fd1ac7a3c736e",
+  "needs_verification": [
+    "public_deadline 2026-04-20 is in the past: the page may still show last year's round"
+  ],
+  "evidence": {
+    "public_deadline": "募集期間 2026年1月20日(火) ~ 2026年4月20日(月)まで",
+    "stipend_jpy_month": "月額4.5万円 280名程度"
+  }
+}

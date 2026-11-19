@@ -1,0 +1,19 @@
+{
+  "id": "iwatani",
+  "name": "岩谷国際留学生奨学助成",
+  "foundation": "公益財団法人岩谷直治記念財団",
+  "source_url": "https://www.iwatani-foundation.or.jp/common/uploads/76da545dd8a3bb7f17f2cc9c5cd4d5fd39dd26ef.pdf",
+  "nomination_required": false,
+  "public_deadline": "2026-12-20",
+  "internal_deadline": null,
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": 150000,
+  "age_limit": 29,
+  "source_hash": "5abdd58cdad1ddb2d0323584dfd05eafbc05bee004542e04dbc11ea2317a9475",
+  "needs_verification": [],
+  "evidence": {
+    "public_deadline": "(2)募集期間 2026年12月1日(火)~2026年12月20日(日)",
+    "stipend_jpy_month": "採択者数は15~20人程度とし、奨学金は1人当り月額15万円。",
+    "age_limit": "(4)2027年4月1日時点の年齢が修士課程は満30歳未満、博士課程は満35歳"
+  }
+}

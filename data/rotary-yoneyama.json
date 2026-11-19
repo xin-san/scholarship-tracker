@@ -1,0 +1,23 @@
+{
+  "id": "rotary-yoneyama",
+  "name": "ロータリー米山記念奨学金 (学部・修士・博士)",
+  "foundation": "公益財団法人ロータリー米山記念奨学会",
+  "source_url": "https://www.rotary-yoneyama.or.jp/content/uploads/pdf-data/201.pdf",
+  "nomination_required": true,
+  "public_deadline": "2026-10-15",
+  "internal_deadline": "NEEDS_VERIFICATION",
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": 100000,
+  "age_limit": 44,
+  "source_hash": "1c5abbae552c4e1f7ba1d363fc918d8be24cd44c57550534c618ab793df939d5",
+  "needs_verification": [
+    "public_deadline 2026-10-15 is in the past: the page may still show last year's round",
+    "public_deadline: several different dates near deadline keywords, earliest one used",
+    "internal_deadline: nomination required, real cutoff is on the university portal"
+  ],
+  "evidence": {
+    "public_deadline": "(3) 申込締切 締切:2026 年 10 月 15 日",
+    "stipend_jpy_month": "学部課程ロータリー米山記念奨学金 月額10 万円",
+    "age_limit": "1982 年 4 月 2 日以降に生まれた者(採用年の 4 月 1 日時点で 45 歳未満の者)。"
+  }
+}

@@ -1,9 +1,52 @@
 # One entry per scholarship. The weekly workflow fetches each url and opens one PR per change.
-#
-# - id: example-foundation-2026          # file name under data/, keep it stable
-#   name: Example Foundation Scholarship
-#   foundation: Example Foundation
-#   url: https://example.org/boshu.pdf    # HTML page or PDF
-#   nomination_required: true             # needs a university-internal nomination
-#   typical_internal_lead_days: 21        # optional: past years' gap between internal and public cutoff
-[]
+# Fields: id, name, foundation, url (HTML or PDF), nomination_required,
+#         typical_internal_lead_days (optional, only from real past-year data).
+# All URLs below are the foundation's or agency's own pages, checked on 2026-11-19.
+
+- id: rotary-yoneyama
+  name: ロータリー米山記念奨学金 (学部・修士・博士)
+  foundation: 公益財団法人ロータリー米山記念奨学会
+  url: https://www.rotary-yoneyama.or.jp/content/uploads/pdf-data/201.pdf
+  nomination_required: true  # 指定校推薦
+
+- id: heiwa-nakajima
+  name: 外国人留学生奨学生
+  foundation: 公益財団法人平和中島財団
+  url: http://hnf.jp/shogaku/  # https refuses connections on this host
+  nomination_required: true  # 大学推薦のみ
+
+- id: nitori
+  name: 来日留学生奨学金
+  foundation: 公益財団法人似鳥国際奨学財団
+  url: https://www.nitori-shougakuzaidan.com/application/
+  nomination_required: false  # 学生本人が直接応募
+
+- id: jasso-shoreihi
+  name: 文部科学省外国人留学生学習奨励費
+  foundation: 独立行政法人日本学生支援機構 (JASSO)
+  url: https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/about.html
+  nomination_required: true  # 大学又は学校からの推薦
+
+- id: sato-yo
+  name: 私費留学生奨学金
+  foundation: 公益財団法人佐藤陽国際奨学財団
+  url: https://sisf.or.jp/ja/scholarship/foreign-studies/self-supporting/
+  nomination_required: true  # 大学の留学生課を通じて応募
+
+- id: ichihara
+  name: 給与奨学生 (外国人 大学・大学院生)
+  foundation: 公益財団法人市原国際奨学財団
+  url: https://www.ichihara-isf.or.jp/scholarship/application-abroad.html
+  nomination_required: true  # 在籍大学・大学院からの推薦
+
+- id: otsuka
+  name: 奨学金 (直接応募)
+  foundation: 公益財団法人大塚敏美育英奨学財団
+  url: https://www.otsukafoundation.org/guide/index.html
+  nomination_required: false  # 直接応募 (指導教員の推薦書は必要)
+
+- id: iwatani
+  name: 岩谷国際留学生奨学助成
+  foundation: 公益財団法人岩谷直治記念財団
+  url: https://www.iwatani-foundation.or.jp/common/uploads/76da545dd8a3bb7f17f2cc9c5cd4d5fd39dd26ef.pdf
+  nomination_required: false  # Web直接応募 (指導教員の推薦書は必要)

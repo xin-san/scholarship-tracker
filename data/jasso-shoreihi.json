@@ -1,0 +1,20 @@
+{
+  "id": "jasso-shoreihi",
+  "name": "文部科学省外国人留学生学習奨励費",
+  "foundation": "独立行政法人日本学生支援機構 (JASSO)",
+  "source_url": "https://www.jasso.go.jp/ryugaku/scholarship_j/shoreihi/about.html",
+  "nomination_required": true,
+  "public_deadline": null,
+  "internal_deadline": "NEEDS_VERIFICATION",
+  "internal_deadline_estimate": null,
+  "stipend_jpy_month": 48000,
+  "age_limit": null,
+  "source_hash": "8ab4385d6c953bc0f935223ccc20f40803884072e8bd9070aaeea498dc054b4d",
+  "needs_verification": [
+    "public_deadline: no date found near a deadline keyword",
+    "internal_deadline: nomination required, real cutoff is on the university portal"
+  ],
+  "evidence": {
+    "stipend_jpy_month": "大学院レベル・学部レベル:月額48,000円"
+  }
+}
