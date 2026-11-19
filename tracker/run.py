@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -18,7 +19,7 @@ from .schema import NEEDS_VERIFICATION, Scholarship, apply_nomination_rule
 REQUIRED_KEYS = ("id", "name", "foundation", "url", "nomination_required")
 
 
-def build_record(src: dict, raw: bytes, old: dict | None) -> Scholarship:
+def build_record(src: dict, raw: bytes, old: dict | None, today: date | None = None) -> Scholarship:
     doc = to_document(raw)
     s = Scholarship(
         id=src["id"],
@@ -37,6 +38,10 @@ def build_record(src: dict, raw: bytes, old: dict | None) -> Scholarship:
         if deadline:
             s.public_deadline = deadline.isoformat()
             s.evidence["public_deadline"] = line
+            if deadline < (today or date.today()):
+                s.needs_verification.append(
+                    f"public_deadline {s.public_deadline} is in the past: the page may still show last year's round"
+                )
         else:
             s.needs_verification.append("public_deadline: no date found near a deadline keyword")
         if ambiguous:
@@ -81,14 +86,19 @@ def main(argv: list[str] | None = None) -> int:
             continue
         path = data_dir / f"{src['id']}.json"
         old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+        # One dead site or unreadable PDF must not stop the others.
         try:
             raw = fetch(src["url"])
-        except Exception as e:  # one dead site must not stop the others
-            errors[src["id"]] = f"fetch failed: {e}"
+        except Exception as e:
+            errors[src["id"]] = f"fetch failed: {type(e).__name__}: {e}"
             continue
-        if old and old.get("source_hash") and old["source_hash"] == to_document(raw).sha256:
-            continue  # page unchanged since last run
-        record = build_record(src, raw, old).to_dict()
+        try:
+            if old and old.get("source_hash") and old["source_hash"] == to_document(raw).sha256:
+                continue  # page unchanged since last run
+            record = build_record(src, raw, old).to_dict()
+        except Exception as e:
+            errors[src["id"]] = f"extract failed: {type(e).__name__}: {e}"
+            continue
         path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         changes = diff_records(old, record)
         if changes:

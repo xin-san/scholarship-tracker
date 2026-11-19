@@ -108,6 +108,17 @@ def test_image_only_pdf_is_flagged_not_guessed(tmp_path):
     assert any("image-only PDF" in item for item in r["needs_verification"])
 
 
+def test_past_deadline_is_flagged(tmp_path):
+    from datetime import date
+    from tracker.run import build_record
+    src = {"id": "x", "name": "n", "foundation": "f", "url": "u", "nomination_required": False}
+    page = "<p>応募締切: 2026年4月20日</p>".encode()
+    late = build_record(src, page, None, today=date(2026, 11, 19))
+    assert any("in the past" in n for n in late.needs_verification)
+    early = build_record(src, page, None, today=date(2026, 3, 1))
+    assert not any("in the past" in n for n in early.needs_verification)
+
+
 def test_dead_source_does_not_stop_others(tmp_path):
     args = _setup(tmp_path, PAGE_V1)
     src = yaml.safe_load((tmp_path / "sources.yaml").read_text())
