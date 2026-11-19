@@ -1,0 +1,61 @@
+name: weekly scan
+
+on:
+  schedule:
+    - cron: "0 0 * * 1" # Mondays 09:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.run.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - id: run
+        run: |
+          uv run python -m tracker.run --sources sources.yaml --data data --out changes
+          echo "changed=$(cat changes/changed.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scan
+          path: |
+            data/
+            changes/
+
+  # One PR per changed scholarship, so a messy update never blocks an urgent one.
+  pr:
+    needs: scan
+    if: needs.scan.outputs.changed != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        id: ${{ fromJson(needs.scan.outputs.changed) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: scan
+          path: scan
+      - id: prep
+        run: |
+          cp "scan/data/${{ matrix.id }}.json" "data/${{ matrix.id }}.json"
+          if grep -q "Needs human verification" "scan/changes/${{ matrix.id }}.md"; then
+            echo "labels=scholarship-update,needs-human-verification" >> "$GITHUB_OUTPUT"
+          else
+            echo "labels=scholarship-update" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update/${{ matrix.id }}
+          title: "update: ${{ matrix.id }}"
+          body-path: scan/changes/${{ matrix.id }}.md
+          add-paths: data/${{ matrix.id }}.json
+          commit-message: "data: update ${{ matrix.id }}"
+          labels: ${{ steps.prep.outputs.labels }}

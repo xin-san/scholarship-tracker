@@ -1,0 +1,9 @@
+# One entry per scholarship. The weekly workflow fetches each url and opens one PR per change.
+#
+# - id: example-foundation-2026          # file name under data/, keep it stable
+#   name: Example Foundation Scholarship
+#   foundation: Example Foundation
+#   url: https://example.org/boshu.pdf    # HTML page or PDF
+#   nomination_required: true             # needs a university-internal nomination
+#   typical_internal_lead_days: 21        # optional: past years' gap between internal and public cutoff
+[]

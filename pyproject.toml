@@ -1,0 +1,19 @@
+[project]
+name = "scholarship-tracker"
+version = "0.1.0"
+description = "Watches scholarship pages for international students in Japan and reports deadline and rule changes, one change per PR."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "requests>=2.31",
+    "pypdf>=4.0",
+    "pyyaml>=6.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
